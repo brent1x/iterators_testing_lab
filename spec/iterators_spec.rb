@@ -80,36 +80,36 @@ end
   #all?
   describe "#all" do
     it "should return true if the condition passes at all elements in the array" do
-      expect().to be()
+      expect(@arr.all? { |num| num > 0 }).to be(true)
     end
   end
 
   #empty?
   describe "#empty?" do
     it "should return false if the array is not empty" do
-      expect().to be()
+      expect(@arr.empty? { |num| }).to be(false)
     end
   end
 
   #eql?
   describe "#eql?" do
     it "should return true if an identical array is compared" do
-      expect().to be()
+      expect(@arr.eql? ([1,2,3,4,5])).to be(true)
     end
   end
 
   #include?
   describe "#include?" do
     it "should return true if the parameter passed to include? is in the array" do
-      expect().to be(true)
-      expect().to be(false)
+      expect(@arr.include?(3)).to be(true)
+      expect(@arr.include?("a")).to be(false)
     end
   end
 
   #nil?
   describe "#nil?" do
     it "should return true if the object is nil" do
-      expect().to be()
+      expect(@nil.nil?).to be(true)
     end
   end
 
@@ -118,28 +118,28 @@ end
   #key?
   describe "hash method - #key?" do
     it "should return true if hash contains a key of :b" do
-      expect().to be()
+      expect(@hash.has_key?(:b)).to be(true)
     end
   end
 
   #keys
   describe "hash method - #keys" do
     it "should return array of symbols" do
-      expect().to eq()
+      expect(@hash.keys).to eq([:a, :b])
     end
   end
 
   #delete
   describe "hash method - #delete" do
     it "should return value of key that is deleted" do
-      expect().to eq()
+      expect(@hash.delete(:b)).to eq(200)
     end
   end
 
   #delete_if
   describe "hash method - #delete_if" do
     it "should delete key/value pair for any value equal to 100" do
-      expect().to eq()
+      expect(@hash.delete_if { |k, v| v == 100 }).to eq(:b => 200)
     end
   end
 
